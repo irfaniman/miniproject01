@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Weather</title>
+        <title>Flight Tracker Index</title>
         <style>
             .center-it {
                 width: 100vw;
@@ -12,30 +12,22 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-family: monospace;
             }
-            
         </style>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     </head>
-    <body>
-
-    
-
+        
         <div class="center-it" style="margin-top: 10vh;">
-            <p><h1>Welcome to your Flight Tracker</h1></p>
+            <h1>Welcome To Your Flight Tracker</h1>
         </div>
 
-        <div class="center-it">
-            <h3>Please Enter Your Name</h3>
-        </div>
-
-        <!--<form method="GET" action="/weather">-->
+        <form method="GET" action="/realTime">
             <div class="center-it">
-                <input type="text" name="city" size="20" placeholder="Username" required>
-                <button type="submit">Get Airline Profile</button>
+                <input type="text" name="name" size="20" placeholder="username" required>
+                <button type="submit">Let's Begin</button>
             </div>
-        <!--</form>-->
+        </form>
         
     </body>
 </html>
-

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Time Flight Details</title>
+</head>
+<body>
+    <div data-th-each="f: ${flights}">
+        <table>
+            <tr>
+                <td>
+
+                    <span data-th-text="${f.reg_number}"></span>
+                    <span data-th-text="${f.flag}"></span>
+                    <span data-th-text="${f.flight_icao}"></span>
+                    <span data-th-text="${f.status}"></span>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>  
+</html>
+
