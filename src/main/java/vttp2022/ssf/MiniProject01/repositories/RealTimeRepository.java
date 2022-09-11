@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 
-public class RealTimeRepo {
+public class RealTimeRepository {
     
     @Autowired
     @Qualifier("redislab")
@@ -18,11 +18,11 @@ public class RealTimeRepo {
         System.out.printf("%s is saved\n", flight_icao);
     }
 
-    public String get(String flight_icao) {
+    public String get(String aircraft_icao) {
 
         ValueOperations<String, String> valueOps = redisTemplate.opsForValue();
-        String value = valueOps.get(flight_icao);
-        System.out.printf("%s retrieved successfully\n", flight_icao);
+        String value = valueOps.get(aircraft_icao);
+        System.out.printf("%s retrieved successfully\n", aircraft_icao);
         return value;
     }
 } 

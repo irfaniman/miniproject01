@@ -77,8 +77,4 @@ public class RealTimeService {
         return list;
         
     }
-
 }
-
-
-

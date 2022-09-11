@@ -10,7 +10,7 @@ public class RealTimeInfo {
     
     private String reg_number;
     private String flag;
-    private String flight_icao;
+    private String aircraft_icao;
     private String status;
 
     public String getReg_number() { return reg_number; }
@@ -19,18 +19,23 @@ public class RealTimeInfo {
     public String getFlag() { return flag; }
     public void setFlag(String flag) { this.flag = flag; }
     
-    public String getFlight_icao() { return flight_icao; }
-    public void setFlight_icao(String flight_icao) { this.flight_icao = flight_icao; }
     
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
 
+    public String getAircraft_icao() {
+        return aircraft_icao;
+    }
+    public void setAircraft_icao(String aircraft_icao) {
+        this.aircraft_icao = aircraft_icao;
+    }
+
     // Json to model
     public static RealTimeInfo create(JsonObject jo) {
         RealTimeInfo p = new RealTimeInfo();
-        p.setReg_number(jo.getString("reg_number"));
-        p.setFlag(jo.getString("flag"));
-        p.setFlight_icao(jo.getString("flight_icao"));
+        // p.setReg_number(jo.getString("reg_number"));
+        // p.setFlag(jo.getString("flag"));
+        // p.setAircraft_icao(jo.getString("flight_icao"));
         p.setStatus(jo.getString("status"));
         return p;
     }
@@ -38,10 +43,10 @@ public class RealTimeInfo {
     // model to Json
     public JsonObject toJson() {
         return Json.createObjectBuilder()
-        .add("reg_number", reg_number)
-        .add("flag", flag)
-        .add("flight_icao", flight_icao)
-        .add("status", status)
+        .add("reg_number", this.reg_number)
+        .add("flag", this.flag)
+        .add("flight_icao", this.aircraft_icao)
+        .add("status", this.status)
         .build();
     }
 
