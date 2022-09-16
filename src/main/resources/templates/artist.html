@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Artist Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .article {
+            padding: 5px;
+            margin: 5px;
+            border-radius: 8px;
+            border: 1px lightgrey solid;
+        }
+    </style>
+</head>
+<body>
+    <form method="GET" action="/albums">
+        <div class="center-it">
+            <input type="text" name="artistID" size="20" placeholder="Input Artist ID Number" required>
+            <button type="submit">View Albums</button>
+        </div>
+    </form>
+
+    <div class="container-fluid">
+    <h1>Search result for <span data-th-text="${artistInput}"></span></h1>
+    <div data-th-each="f: ${artist}" class="article">
+        <table>
+            <tr>
+                <td>
+
+                    <p data-th-text="${f.idArtist}"></p>
+                    <p data-th-text="${f.strArtist}"></p>
+                    <p data-th-text="${f.strLabel}"></p>
+                    <p data-th-text="${f.intFormedYear}"></p>
+                    <p data-th-text="${f.strStyle}"></p>
+                    <p data-th-text="${f.strGenre}"></p>
+                    <p data-th-text="${f.strBiographyEn}"></p>
+                    <p data-th-text="${f.strCountry}"></p>
+                </td>
+                    <td style="width: 30%">
+                        <img data-th-src="${f.strArtistThumb}" alt="">
+                    </td>
+                    
+                    <td>
+                        <img data-th-src="${f.strArtistLogo}" alt="">
+                    </td>
+            </tr>
+        </table>
+    </div>
+
+
+</body>  
+</html>
+
