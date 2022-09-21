@@ -5,52 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Artist Result</title>
+    <link rel="stylesheet" href="css/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        .article {
+        .card {
             padding: 5px;
             margin: 5px;
-            border-radius: 8px;
-            border: 1px lightgrey solid;
+            background-color: #FFEFD5;
+        }
+        .para {
+            text-align: justify;
+             text-justify: inter-word;
         }
     </style>
 </head>
-<body>
-    <form method="GET" action="/albums">
-        <div class="center-it">
-            <input type="text" name="artistID" size="20" placeholder="Input Artist ID Number" required>
-            <button type="submit">View Albums</button>
-        </div>
-    </form>
-
+<body style="background: #FFEFD5">
     <div class="container-fluid">
-    <h1>Search result for <span data-th-text="${artistInput}"></span></h1>
-    <div data-th-each="f: ${artist}" class="article">
-        <table>
-            <tr>
-                <td>
+        <div class="text-center pt-5">
+            <h2>Search result for <span class="gradient-text" data-th-text="${artistInput}"></span></h2>
+        </div>
 
-                    <p data-th-text="${f.idArtist}"></p>
-                    <p data-th-text="${f.strArtist}"></p>
-                    <p data-th-text="${f.strLabel}"></p>
-                    <p data-th-text="${f.intFormedYear}"></p>
-                    <p data-th-text="${f.strStyle}"></p>
-                    <p data-th-text="${f.strGenre}"></p>
-                    <p data-th-text="${f.strBiographyEn}"></p>
-                    <p data-th-text="${f.strCountry}"></p>
-                </td>
-                    <td style="width: 30%">
-                        <img data-th-src="${f.strArtistThumb}" alt="">
-                    </td>
-                    
-                    <td>
-                        <img data-th-src="${f.strArtistLogo}" alt="">
-                    </td>
-            </tr>
-        </table>
-    </div>
+        <form method="GET" action="/albums">
+            <div class="row d-flex justify-content-center">
+                <div class="input-group mb-3 w-25 p-3">
+                    <input type="text" name="artistID" class="form-control" placeholder="Input Artist ID Number" required>
+                    <button type="submit" class="btn btn-primary">View Albums</button>
+                </div>
+            </div>
+        </form>
+        </div>
+
+        <!--<div data-th-each="f: ${artist}" class="card jrow d-flex justify-content-center" style="width: 18rem;">
+            <img data-th-src="${f.strArtistThumb}" class="card-img-top img-thumbnail">
+            <img data-th-src="${f.strArtistLogo}" class="card-img-top">
+            <div class="card-body">
+              <h5 data-th-text="'Artist: ' + ${f.strArtist}" class="card-title"></h5>
+              <p data-th-text="'Label: ' + ${f.strLabel}" class="card-text"></p>
+              <p data-th-text="'YearFormed: ' + ${f.intFormedYear}" class="card-text"></p>
+              <p data-th-text="'Style: ' + ${f.strStyle}" class="card-text"></p>
+              <p data-th-text="'Genre: ' + ${f.strGenre}" class="card-text"></p>
+              <p data-th-text="'Biography: ' + ${f.strBiographyEn}" class="card-text"></p>
+              <p data-th-text="'Country: ' + ${f.strCountry}" class="card-text">/p>
+
+            </div>
+          </div> -->
+
+          <div data-th-each="f: ${artist}" class="container" style="background: #FFEFD5">
+            <div class="card border-0">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img data-th-src="${f.strArtistThumb}" class="img-fluid img-thumbnail">
+                        <img data-th-src="${f.strArtistLogo}" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                        <h3 data-th-text="'Artist: ' + ${f.strArtist}" class="card-title"></h3>
+                        <p data-th-text="'ID: ' + ${f.idArtist}" class="card-text"></p>
+                        <p data-th-text="'Label: ' + ${f.strLabel}" class="card-text"></p>
+                        <p data-th-text="'YearFormed: ' + ${f.intFormedYear}" class="card-text"></p>
+                        <p data-th-text="'Style: ' + ${f.strStyle}" class="card-text"></p>
+                        <p data-th-text="'Genre: ' + ${f.strGenre}" class="card-text"></p>
+                        <p data-th-text="'Biography: ' + ${f.strBiographyEn}" class="card-text para"></p>
+                        <p data-th-text="'Country: ' + ${f.strCountry}" class="card-text">/p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <br>
+            </div>
 
 
-</body>  
+    </body>  
 </html>
-

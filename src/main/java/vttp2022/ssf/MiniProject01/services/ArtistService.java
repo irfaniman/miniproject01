@@ -20,8 +20,6 @@ import jakarta.json.JsonReader;
 import vttp2022.ssf.MiniProject01.models.Artist;
 
 
-
-
 @Service
 public class ArtistService {
 

@@ -20,16 +20,11 @@ import jakarta.json.JsonReader;
 import vttp2022.ssf.MiniProject01.models.Albums;
 
 
-
 @Service
 public class AlbumsService {
 
     @Autowired 
     private static final String ALBUMSEARCH_URL = "https://theaudiodb.com/api/v1/json/2/album.php";
-        
-    // @Value("${AUDIO_KEY}")
-    // private String key;
-    //private String artistID = "111238";
 
     public List<Albums> getArtistAlbums(String artistID) {
 
