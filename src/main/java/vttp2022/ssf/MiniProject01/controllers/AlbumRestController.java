@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
 import vttp2022.ssf.MiniProject01.models.Albums;
-import vttp2022.ssf.MiniProject01.services.AlbumRestService;
+import vttp2022.ssf.MiniProject01.services.SaveService;
 
 @RestController
 @RequestMapping(path = "/albumRest", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AlbumRestController {
 
 	@Autowired
-	private AlbumRestService albSvc;
+	private SaveService albSvc;
 
 	@GetMapping(path="{idAlbum}")
 	public ResponseEntity<String> getNews(@PathVariable(name="idAlbum") String idAlbum) {

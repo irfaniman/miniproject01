@@ -22,6 +22,7 @@
 <body style="background: #FFEFD5">
     <div class="container-fluid">
         <div class="text-center pt-5">
+            <h2>Welcome <span class="gradient-text" data-th-text="${name} + '!'"></span></h2>
             <h2>Search result for <span class="gradient-text" data-th-text="${artistInput}"></span></h2>
         </div>
 
@@ -34,21 +35,6 @@
             </div>
         </form>
         </div>
-
-        <!--<div data-th-each="f: ${artist}" class="card jrow d-flex justify-content-center" style="width: 18rem;">
-            <img data-th-src="${f.strArtistThumb}" class="card-img-top img-thumbnail">
-            <img data-th-src="${f.strArtistLogo}" class="card-img-top">
-            <div class="card-body">
-              <h5 data-th-text="'Artist: ' + ${f.strArtist}" class="card-title"></h5>
-              <p data-th-text="'Label: ' + ${f.strLabel}" class="card-text"></p>
-              <p data-th-text="'YearFormed: ' + ${f.intFormedYear}" class="card-text"></p>
-              <p data-th-text="'Style: ' + ${f.strStyle}" class="card-text"></p>
-              <p data-th-text="'Genre: ' + ${f.strGenre}" class="card-text"></p>
-              <p data-th-text="'Biography: ' + ${f.strBiographyEn}" class="card-text"></p>
-              <p data-th-text="'Country: ' + ${f.strCountry}" class="card-text">/p>
-
-            </div>
-          </div> -->
 
           <div data-th-each="f: ${artist}" class="container" style="background: #FFEFD5">
             <div class="card border-0">
@@ -77,3 +63,4 @@
 
     </body>  
 </html>
+

@@ -10,7 +10,7 @@ import vttp2022.ssf.MiniProject01.models.Albums;
 import vttp2022.ssf.MiniProject01.repositories.AlbumRepository;
 
 @Service
-public class AlbumRestService {
+public class SaveService {
     
     @Autowired
 	private AlbumRepository albumsRepo;
